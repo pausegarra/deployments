@@ -28,7 +28,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx-proxy-acme
     environment:
-      - DEFAULT_EMAIL=${{ secrets.EMAIL }}
+      - DEFAULT_EMAIL=paausegarra.b@gmail.com
     volumes_from:
       - nginx-proxy
     volumes:
@@ -43,7 +43,7 @@ services:
       - VIRTUAL_HOST=doom.pausegarra.es,doom.pausegarra.com
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=doom.pausegarra.es,doom.pausegarra.com
-      - LETSENCRYPT_MAIL=${{ secrets.EMAIL }}
+      - LETSENCRYPT_MAIL=paausegarra.b@gmail.com
 
 volumes:
   conf:
