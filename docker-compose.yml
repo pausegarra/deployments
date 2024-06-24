@@ -40,9 +40,9 @@ services:
     image: callumhoughton22/doom-in-docker:0.1
     restart: unless-stopped
     environment:
-      - VIRTUAL_HOST=doom.pausegarra.es,doom.pausegarra.com
+      - VIRTUAL_HOST=doom.pausegarra.es
       - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=doom.pausegarra.es,doom.pausegarra.com
+      - LETSENCRYPT_HOST=doom.pausegarra.es
       - LETSENCRYPT_MAIL=paausegarra.b@gmail.com
 
 volumes:
