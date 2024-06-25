@@ -84,6 +84,11 @@ server {
     error_log /proc/self/fd/2;
     access_log /proc/self/fd/1;
 
+    location /.well-known/acme-challenge/ {
+        root /usr/share/nginx/html;
+        allow all;
+    }
+
     location / {
         proxy_pass http://{{ trim $host }};
         proxy_set_header Host $http_host;
