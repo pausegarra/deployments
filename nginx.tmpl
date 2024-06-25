@@ -97,3 +97,13 @@ server {
     }
 }
 {{ end }}
+
+server {
+    listen 80;
+    server_name ~^(.+)\.com$;
+
+    location / {
+        set $new_host $1.es;
+        return 301 https://$new_host$request_uri;
+    }
+}

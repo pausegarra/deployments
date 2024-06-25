@@ -28,7 +28,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx-proxy-acme
     environment:
-      - DEFAULT_EMAIL=paausegarra.b@gmail.com
+      - DEFAULT_EMAIL=pausegarra.b@gmail.com
     volumes_from:
       - nginx-proxy
     volumes:
@@ -36,14 +36,14 @@ services:
       - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
-  doom:
-    image: callumhoughton22/doom-in-docker:0.1
+  hello-world:
+    image: docker/getting-started
     restart: unless-stopped
     environment:
-      - VIRTUAL_HOST=doom.pausegarra.es
-      - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=doom.pausegarra.es
-      - LETSENCRYPT_MAIL=paausegarra.b@gmail.com
+      - VIRTUAL_HOST=hello-world.pausegarra.es
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=hello-world.pausegarra.es
+      - LETSENCRYPT_MAIL=pausegarra.b@gmail.com
 
 volumes:
   conf:
